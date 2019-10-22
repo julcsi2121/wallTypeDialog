@@ -2,30 +2,55 @@ import React from 'react';
 import './App.css';
 
 class WallDialog extends React.Component{
+  static idCounter = 0;
+
+  cica = {id: WallDialog.idCounter++, species: "cica", text: "A cicák nagyon aranyos állatok."};
+  kutya = {id: WallDialog.idCounter++, species: "kutya", text: "A kutyák nagyon okos állatok."};
+  delfin = {id: WallDialog.idCounter++, species: "delfin", text: "A delfinek nagyon szép állatok."};
+
+  state = {asd: [this.cica, this.kutya, this.delfin], textToShow: "", selectedId: null};
+
   constructor(props){
     super(props);
-    this.state = {textToShow: ""};
   }
 
-  cica = {species: "cica", text: "A cicák nagyon aranyos állatok."};
-  kutya = {species: "kutya", text: "A kutyák nagyon okos állatok."};
-  delfin = {species: "delfin", text: "A delfinek nagyon szép állatok."};
-
-  data = [this.cica, this.kutya, this.delfin];
+  findIndexById(element) {
+    for(let i = 0; i < this.state.asd.length; i++) {
+      if(element.id === this.state.asd[i].id) {
+        return i;
+      }
+    }
+  }
 
   selectAnimal(element){
-    this.setState({textToShow: element.text});
-    console.log(element.species);
+    this.setState({textToShow: element.text, selectedId: this.state.asd[this.findIndexById(element)]});
   }
 
-  listElement = this.data.map((element) => <li key={element.species}><button onClick={() => this.selectAnimal(element)}>{element.species}</button></li>);
+  copyAnimal(element){
+    const elements = this.state.asd.slice();
+    const selected = this.state.asd[this.findIndexById(element)];
+    let copy = {id: WallDialog.idCounter++, text: selected.text, species: selected.species}
+    this.setState({asd: elements.concat(copy)});
+  }
+
+  deleteAnimal(element){
+    this.setState({asd: this.state.asd.filter(function(species) {
+        return species.id !== element.id;
+      })});
+  }
+
+
 
   render() {
+    let listElement = this.state.asd.map((element) => <li key={element.id}><button onClick={() => this.selectAnimal(element)}>{element.species}</button></li>);
+
     return(
         <div>
           <h1>Wall type dialog opened</h1>
-          <ul>{this.listElement}</ul>
+          <ul>{listElement}</ul>
           <p>{this.state.textToShow}</p>
+          <button onClick={() => this.copyAnimal(this.state.selectedId)}>Copy item</button>
+          <button onClick={() => this.deleteAnimal(this.state.selectedId)}>Delete item</button>
           <button onClick={this.props.closeDialog}>Close dialog</button>
         </div>
     )
