@@ -1,13 +1,15 @@
 import TextInput from "./textInput";
 import NumericStepper from "./numericStepper";
+import ToggleSwitch from "./toggleSwitch"
+import DropDownList from "./dropDownList";
 import React from 'react';
 
 export default class WallDialog extends React.Component{
     static idCounter = 0;
 
-    cica = {id: WallDialog.idCounter++, species: "cica", text: "A cicák nagyon aranyos állatok.", size: 10};
-    kutya = {id: WallDialog.idCounter++, species: "kutya", text: "A kutyák nagyon okos állatok.", size: 5};
-    delfin = {id: WallDialog.idCounter++, species: "delfin", text: "A delfinek nagyon szép állatok.", size: 20};
+    cica = {id: WallDialog.idCounter++, species: "cica", text: "A cicák nagyon aranyos állatok.", size: 10, toggle: false, option: "interior"};
+    kutya = {id: WallDialog.idCounter++, species: "kutya", text: "A kutyák nagyon okos állatok.", size: 5, toggle: true, option: "exterior"};
+    delfin = {id: WallDialog.idCounter++, species: "delfin", text: "A delfinek nagyon szép állatok.", size: 20, toggle: false, option: "custom"};
 
     state = {asd: [this.cica, this.kutya, this.delfin], textToShow: "", selectedId: 0};
 
@@ -30,7 +32,7 @@ export default class WallDialog extends React.Component{
     copyAnimal = () => {
         const elements = this.state.asd.slice();
         const selected = this.selectedElement;
-        let copy = {id: WallDialog.idCounter++, text: selected.text, species: selected.species, size: selected.size};
+        let copy = {id: WallDialog.idCounter++, text: selected.text, species: selected.species, size: selected.size, toggle: selected.toggle, option: selected.option};
         this.setState({asd: elements.concat(copy)});
     };
 
@@ -60,6 +62,8 @@ export default class WallDialog extends React.Component{
                 <ul>{listElement}</ul>
                 <TextInput text={selected.text}/>
                 <NumericStepper value={selected.size}/>
+                <ToggleSwitch isOn={selected.toggle}/>
+                <DropDownList option={selected.option}/>
                 <button onClick={this.copyAnimal}>Copy item</button>
                 <button onClick={this.deleteAnimal}>Delete item</button>
                 <button onClick={this.props.closeDialog}>Close dialog</button>
