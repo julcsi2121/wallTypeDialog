@@ -7,7 +7,9 @@ export default class DropDownList extends React.Component{
     }
 
     handleChange(event){
-        this.setState({option: event.target.value});
+        let selected = event.target.value;
+        this.setState({option: selected});
+        this.props.onChange(selected);
     }
 
     componentWillReceiveProps(newProps) {

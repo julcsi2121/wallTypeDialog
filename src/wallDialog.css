@@ -1,0 +1,99 @@
+#wall-dialog {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    padding: 10px 7px;
+    z-index: 9999;
+}
+#wall-dialog-overlay {
+    background: rgba(255,255,254,.5);
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+#wall-dialog-content {
+    background-color: #def7fa;
+    z-index: 3;
+    width: 700px;
+    margin: 0 auto;
+}
+
+#header {
+    padding: 20px 20px 20px 20px;
+}
+
+#title {
+    display: inline;
+}
+
+#exit-button {
+    display: inline-flex;
+    float: right;
+    padding: 5px 8px;
+    border: none;
+    background: none;
+}
+
+#exit-button:hover {
+    background: darkgrey;
+    border-radius: 50%;
+}
+
+#content-wrapper{
+    border: 1px solid black;
+    overflow: hidden;
+    padding: 20px 20px 20px 20px;
+}
+
+#left{
+    width: 200px;
+    max-height: 600px;
+    overflow-y: scroll;
+    float:left;
+    border: 1px solid red;
+}
+
+::-webkit-scrollbar {
+    min-height: 20px;
+    border: 4px solid transparent;
+    background-clip: padding-box;
+    -webkit-border-radius: 7px;
+    background-color: #bdbfc5;
+}
+
+.element:focus{
+    background: darkcyan;
+    outline: 0;
+}
+
+.element:hover{
+    background: darkgrey;
+    cursor: context-menu;
+}
+
+#right{
+    border: 1px solid green;
+    overflow: hidden;
+    padding: 0 15px 0 15px;
+}
+
+.row{
+    padding: 5px;
+}
+
+.title{
+    display: inline-block;
+    width: 100px;
+    vertical-align: top;
+}
+
+#footer{
+    padding: 20px;
+}

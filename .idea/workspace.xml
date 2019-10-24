@@ -3,6 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="8fdceeb9-bfbd-4d85-a359-5dad21987219" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dropDownList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dropDownList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/multiStateButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/multiStateButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/numericStepper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/numericStepper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/textInput.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toggleSwitch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/toggleSwitch.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/toggleSwitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/toggleSwitch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/wallDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/wallDialog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wallDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wallDialog.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,7 +86,7 @@
       <updated>1571744045646</updated>
       <workItem from="1571744049973" duration="23122000" />
       <workItem from="1571826648141" duration="21531000" />
-      <workItem from="1571914063731" duration="4360000" />
+      <workItem from="1571914063731" duration="23720000" />
     </task>
     <servers />
   </component>

@@ -11,8 +11,8 @@ export default class ButtonGroup extends React.Component{
     }
 
     handleClick(element) {
-         this.setState({selected: element.value});
-         console.log(element.value);
+        this.setState({selected: element.value});
+        console.log(element.value);
     }
 
     componentWillReceiveProps(newProps) {

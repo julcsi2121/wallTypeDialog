@@ -8,7 +8,9 @@ export default class ToggleSwitch extends React.Component{
     }
 
     handleToggle(){
-        this.setState({isOn: !this.state.isOn})
+        let newParam = !this.state.isOn;
+        this.setState({isOn: newParam});
+        this.props.onChange(newParam);
     }
 
     componentWillReceiveProps(newProps) {

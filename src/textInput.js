@@ -1,4 +1,5 @@
 import React from 'react';
+import "./textInput.css"
 
 export default class TextInput extends React.PureComponent{
     constructor(props) {
@@ -9,6 +10,7 @@ export default class TextInput extends React.PureComponent{
     handleChange(event){
         let text = event.target.value;
         this.setState({value: text});
+        this.props.onChange(text);
     }
 
     componentWillReceiveProps(newProps) {
@@ -17,8 +19,8 @@ export default class TextInput extends React.PureComponent{
 
     render() {
         return(
-            <label>Text:
-                <input value={this.state.value} onChange={(event) => this.handleChange(event)}/>
+            <label>
+                <input className="text-input" value={this.state.value} onChange={(event) => this.handleChange(event)}/>
             </label>
         )
     }
