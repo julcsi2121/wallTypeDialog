@@ -10,10 +10,40 @@ export default class WallDialog extends React.Component{
     static idCounter = 3;
     static lastSavedData = [];
 
-    interior = {id: 0, description: "Interior", type: "This is an interior wall.", price: "120", width: 10, height: 20, open: false, divide: true, icon: "interior", axis: 0};
-    exterior = {id: 1, description: "Exterior", type: "This is an exterior wall.", price: "80", width: 5, height: 10, open: true,  divide: true, icon: "exterior", axis: 2};
-    other = {id: 2, description: "Other", type: "This is an another wall.", price: "100", width: 20, height: 5, open: false, divide: false, icon: "custom", axis: 1};
-    state = {dataArray: [this.interior, this.exterior, this.other], textToShow: "", selectedId: 0};
+    interior = {id: 0,
+                description: "Interior",
+                type: "This is an interior wall.",
+                price: "120",
+                width: 10,
+                height: 20,
+                open: false,
+                divide: true,
+                icon: "interior",
+                axis: 0};
+
+    exterior = {id: 1,
+                description: "Exterior",
+                type: "This is an exterior wall.",
+                price: "80",
+                width: 5,
+                height: 10,
+                open: true,
+                divide: true,
+                icon: "exterior",
+                axis: 2};
+
+    other = {id: 2,
+             description: "Other",
+             type: "This is an another wall.",
+             price: "100",
+             width: 20,
+             height: 5,
+             open: false,
+             divide: false,
+             icon: "custom",
+             axis: 1};
+
+    state = {dataArray: [this.interior, this.exterior, this.other], selectedId: 0};
 
     constructor(props){
         super(props);
@@ -25,11 +55,20 @@ export default class WallDialog extends React.Component{
             let deepCopy = [];
 
             for(let element of WallDialog.lastSavedData) {
-                let copy = {id: element.id, description: element.description, type: element.type, price: element.price, width: element.width, height: element.height, open: element.open, divide: element.divide, icon: element.icon, axis: element.axis};
+                let copy = {id: element.id,
+                            description: element.description,
+                            type: element.type,
+                            price: element.price,
+                            width: element.width,
+                            height: element.height,
+                            open: element.open,
+                            divide: element.divide,
+                            icon: element.icon,
+                            axis: element.axis};
                 deepCopy.push(copy);
             }
 
-            this.setState({dataArray: deepCopy});
+            this.setState({dataArray: deepCopy, selectedId: deepCopy[0].id});
         }
     }
 
@@ -42,13 +81,24 @@ export default class WallDialog extends React.Component{
     }
 
     selectItem(element){
-        this.setState({textToShow: element.type, selectedId: this.state.dataArray[this.findIndexById(element)].id});
+        this.setState({selectedId: this.state.dataArray[this.findIndexById(element)].id});
     }
 
     copyItem = () => {
         const elements = this.state.dataArray.slice();
         const selected = this.selectedElement;
-        let copy = {id: WallDialog.idCounter++, description: selected.description, type: selected.type, price: selected.price, width: selected.width, height: selected.height, open: selected.open, divide: selected.divide, icon: selected.icon, axis: selected.axis};
+
+        let copy = {id: WallDialog.idCounter++,
+                    description: selected.description,
+                    type: selected.type,
+                    price: selected.price,
+                    width: selected.width,
+                    height: selected.height,
+                    open: selected.open,
+                    divide: selected.divide,
+                    icon: selected.icon,
+                    axis: selected.axis};
+
         this.setState({dataArray: elements.concat(copy)});
     };
 
@@ -56,17 +106,27 @@ export default class WallDialog extends React.Component{
         let filteredArray = this.state.dataArray.filter((item) => {
             return item.id !== this.selectedElement.id;
         });
-        this.setState({dataArray: filteredArray, selectedId: 0});
+
+        this.setState({dataArray: filteredArray, selectedId: filteredArray[0].id});
     };
 
     saveData = () => {
         WallDialog.lastSavedData.length = 0;
 
         for(let element of this.state.dataArray) {
-            let copy = {id: element.id, description: element.description, type: element.type, price: element.price, width: element.width, height: element.height, open: element.open, divide: element.divide, icon: element.icon, axis: element.axis};
+            let copy = {id: element.id,
+                        description: element.description,
+                        type: element.type,
+                        price: element.price,
+                        width: element.width,
+                        height: element.height,
+                        open: element.open,
+                        divide: element.divide,
+                        icon: element.icon,
+                        axis: element.axis};
+
             WallDialog.lastSavedData.push(copy);
         }
-
         this.props.closeDialog();
     };
 
@@ -138,7 +198,13 @@ export default class WallDialog extends React.Component{
             color: "white",
         };
 
-        let listElement = this.state.dataArray.map((element) => <div key={element.id} tabIndex="-1" style={element.id === this.state.selectedId ? selectedStyle : {}} className="element" onClick={() => this.selectItem(element)}>{element.description}</div>);
+        let listElement = this.state.dataArray.map((element) =>
+            <div key={element.id}
+                 tabIndex="-1"
+                 style={element.id === this.state.selectedId ? selectedStyle : {}}
+                 className="element"
+                 onClick={() => this.selectItem(element)}>{element.description}</div>);
+
         let selected = this.selectedElement;
 
         return(
@@ -179,11 +245,11 @@ export default class WallDialog extends React.Component{
                             <div className="row">
                                 <label className="title">Options</label>
                                 <div className="switch-input">
-                                    <ToggleSwitch isOn={selected.open} onChange={(newParam) => this.onOpenChange(newParam)}/>
+                                    <ToggleSwitch isOn={selected.open} id="toggle1" onChange={(newParam) => this.onOpenChange(newParam)}/>
                                     <label className="side-text">Open</label>
                                 </div>
                                 <div className="switch-input">
-                                    <ToggleSwitch isOn={selected.divide} onChange={(newParam) => this.onDivideChange(newParam)}/>
+                                    <ToggleSwitch isOn={selected.divide} id="toggle2" onChange={(newParam) => this.onDivideChange(newParam)}/>
                                     <label className="side-text">Divide</label>
                                 </div>
                             </div>

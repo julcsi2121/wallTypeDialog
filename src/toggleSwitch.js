@@ -25,12 +25,12 @@ export default class ToggleSwitch extends React.Component{
                     checked={this.state.isOn}
                     onChange={() => this.handleToggle()}
                     className="switchbox"
-                    id={`switch-new`}
+                    id={`switch-new` + this.props.id}
                 />
                 <label
                     style={{ background: this.state.isOn && '#6c59fb' }}
                     className="switchbox-label"
-                    htmlFor={`switch-new`}
+                    htmlFor={`switch-new` + this.props.id}
                 >
                     <span className={`switch-button`} />
                 </label>

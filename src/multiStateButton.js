@@ -24,7 +24,7 @@ export default class ButtonGroup extends React.Component{
 
     render() {
         let divStyle = {
-            border: '1px solid black',
+            border: '1px solid rgb(109,89,251)',
         };
 
         let buttonList = this.state.buttons.map((element) =>
