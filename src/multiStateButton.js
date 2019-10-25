@@ -1,4 +1,5 @@
 import React from "react"
+import "./multiStateButton.css"
 
 export default class ButtonGroup extends React.Component{
     constructor(props){
@@ -13,14 +14,30 @@ export default class ButtonGroup extends React.Component{
     handleClick(element) {
         this.setState({selected: element.value});
         console.log(element.value);
+        this.props.onChange(element.value);
     }
 
     componentWillReceiveProps(newProps) {
         this.setState({selected: newProps.multi});
     }
 
+
     render() {
-        let buttonList = this.state.buttons.map((element) => <img src={element.img} key={element.value} alt={element.alt} onClick={() => this.handleClick(element)}/>);
+        let divStyle = {
+            border: '1px solid black',
+        };
+
+        let buttonList = this.state.buttons.map((element) =>
+            <div className="image-container"
+                 style={element.value === this.state.selected ? divStyle : {}}>
+                <img src={element.img}
+                     key={element.value}
+                     className="image-to-show"
+                     alt={element.alt}
+                     width="25"
+                     height="25"
+                     onClick={() => this.handleClick(element)}/>
+            </div>);
 
         return(
             <div>

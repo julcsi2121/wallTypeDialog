@@ -1,0 +1,12 @@
+.image-container{
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    border-radius: 20px;
+    border-color: rgba(109,89,251);
+}
+
+.image-to-show{
+    margin: auto;
+}

@@ -20,7 +20,9 @@ export default class TextInput extends React.PureComponent{
     render() {
         return(
             <label>
-                <input className="text-input" value={this.state.value} onChange={(event) => this.handleChange(event)}/>
+                <input className="text-input"
+                       value={this.state.value}
+                       onChange={(event) => this.handleChange(event)}/>
             </label>
         )
     }

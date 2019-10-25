@@ -6,8 +6,8 @@
       <change beforePath="$PROJECT_DIR$/src/dropDownList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/dropDownList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/multiStateButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/multiStateButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/numericStepper.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/numericStepper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/textInput.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/textInput.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/textInput.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/textInput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/toggleSwitch.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/toggleSwitch.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/toggleSwitch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/toggleSwitch.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wallDialog.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/wallDialog.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/wallDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wallDialog.js" afterDir="false" />
@@ -86,7 +86,8 @@
       <updated>1571744045646</updated>
       <workItem from="1571744049973" duration="23122000" />
       <workItem from="1571826648141" duration="21531000" />
-      <workItem from="1571914063731" duration="23720000" />
+      <workItem from="1571914063731" duration="24293000" />
+      <workItem from="1572000719596" duration="20322000" />
     </task>
     <servers />
   </component>

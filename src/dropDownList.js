@@ -1,4 +1,5 @@
 import React from "react";
+import "./dropDownList.css";
 
 export default class DropDownList extends React.Component{
     constructor(props){
@@ -18,8 +19,8 @@ export default class DropDownList extends React.Component{
 
     render() {
         return(
-            <label>Select your option
-                <select value={this.state.option} onChange={(event) => this.handleChange(event)}>
+            <label>
+                <select className="dropdown-list" value={this.state.option} onChange={(event) => this.handleChange(event)}>
                     <option value="exterior">Exterior</option>
                     <option value="interior">Interior</option>
                     <option value="custom">Custom</option>

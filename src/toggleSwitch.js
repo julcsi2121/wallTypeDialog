@@ -28,7 +28,7 @@ export default class ToggleSwitch extends React.Component{
                     id={`switch-new`}
                 />
                 <label
-                    style={{ background: this.state.isOn && '#06D6A0' }}
+                    style={{ background: this.state.isOn && '#6c59fb' }}
                     className="switchbox-label"
                     htmlFor={`switch-new`}
                 >

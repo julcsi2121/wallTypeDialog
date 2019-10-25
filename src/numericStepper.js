@@ -1,4 +1,5 @@
 import React from "react"
+import "./numericStepper.css"
 
 export default class NumericStepper extends React.Component {
     constructor(props){
@@ -20,7 +21,13 @@ export default class NumericStepper extends React.Component {
     render() {
         return(
             <label>
-                <input type="number" value={this.state.num} min={0} max={100} step={1} onChange={(event) => this.handleChange(event)}/>
+                <input type="number"
+                       className="numeric-stepper"
+                       value={this.state.num}
+                       min={0}
+                       max={100}
+                       step={1}
+                       onChange={(event) => this.handleChange(event)}/>
             </label>
         )
     }
