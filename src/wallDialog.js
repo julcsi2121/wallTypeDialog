@@ -103,6 +103,10 @@ export default class WallDialog extends React.Component{
     };
 
     deleteItem = () => {
+        if(this.state.dataArray.length === 1) {
+            return;
+        }
+
         let filteredArray = this.state.dataArray.filter((item) => {
             return item.id !== this.selectedElement.id;
         });
