@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8fdceeb9-bfbd-4d85-a359-5dad21987219" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/wallDialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/wallDialog.js" afterDir="false" />
-    </list>
+    <list default="true" id="8fdceeb9-bfbd-4d85-a359-5dad21987219" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
       <workItem from="1571744049973" duration="23122000" />
       <workItem from="1571826648141" duration="21531000" />
       <workItem from="1571914063731" duration="24293000" />
-      <workItem from="1572000719596" duration="22854000" />
+      <workItem from="1572000719596" duration="23117000" />
     </task>
     <servers />
   </component>
